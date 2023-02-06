@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>Guarda el color de acuerdo a las teclas y luego clickea para cambiar color:</h2>
+    <ul>
+        <li>A: Morado</li>
+        <li>S: Naranjo</li>
+        <li>D: Celeste</li>
+    </ul>
+
+    <div id="Midiv1" style="width: 200px; height: 200px; background-color: green;"></div>
+    <div id="Midiv2" style="width: 200px; height: 200px; background-color: red;"></div>
+    <div id="Midiv3" style="width: 200px; height: 200px; background-color: blue;"></div>
+    <div id="Midiv4" style="width: 200px; height: 200px; background-color: yellow;"></div>
+
+    <script>
+
+    elemento = document.querySelectorAll("div").forEach((elemento) => {
+      elemento.addEventListener("click", (seleccionado) => {
+        const id = seleccionado.target.getAttribute("id");
+        elemento.style.backgroundColor = color;
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "a") {
+        color = "purple";
+      } else if (event.key === "s") {
+        color = "orange";
+      } else if (event.key === "d") {
+        color = "cyan";
+      } 
+    });
+
+    </script>
+
+</body>
+</html>
